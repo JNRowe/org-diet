@@ -1,0 +1,185 @@
+# "Org-diet base file" by Christopher Allan Webber
+#
+# To the extent possible under law, the person who associated CC0 with
+# "Org-diet base file" has waived all copyright and related or
+# neighboring rights to "Org-diet base file".
+#
+# You should have received a copy of the CC0 legalcode along with this
+# work.  If not, see <http://creativecommons.org/publicdomain/zero/1.0/>.
+
+# ... You don't have to keep the above notice your own file, feel free
+# to remove this.  Released under CC0 because I don't care what you do
+# with it and also it's kind of both content + software thanks to the
+# org-babel blocks.
+#
+# Of course you're still bound by the GPL for the software bits.  For
+# the content bits, you're free to do whatevertheheckyouwant.
+
+#+SEQ_TODO: CAL-IN | CAL-OUT CAL-CANCEL
+#+SEQ_TODO: TODO | DONE
+#+SEQ_TODO: | CANCELED
+
+Ye Olde Diet File
+
+* Daily Logs
+  :PROPERTIES:
+  :COLUMNS:  %25ITEM %7Weight %8Calories
+  :END:
+
+* Recipes
+
+** Whiskey beans
+
+| Ingredients       | Calories | Quantity | Total |
+|-------------------+----------+----------+-------|
+| can black beans   |      385 |        2 |   770 |
+| cup whiskey       |      552 |        1 |   552 |
+| tbsp olive oil    |      119 |      2/3 |    79 |
+| large onion       |       60 |        1 |    60 |
+| clove garlic      |        4 |        3 |    12 |
+| tbsp molasses     |       60 |        1 |    60 |
+| tbsp tomato paste |       13 |        1 |    13 |
+|-------------------+----------+----------+-------|
+| Total             |          |        4 |   386 |
+#+TBLFM: $4=$2*$3;%.0f::$LR4=vsum(@2$4..@-I$4)/$LR3;%.0f
+
+This is an example recipe.  Copy and paste its format, whatever.
+
+Set the third column on the last row to adjust portion sizes.
+
+* Habits
+** TODO Regen [[file:~/org/diet.org::*Statistics][stats]]
+   SCHEDULED: <2011-04-23 Sat .+1d>
+   :PROPERTIES:
+   :STYLE:    habit
+   :END:
+
+** TODO Weigh-in in org and on calendar
+   SCHEDULED: <2011-04-23 Sat .+1d>
+   :PROPERTIES:
+   :STYLE:    habit
+   :END:
+
+** TODO Calorie clock-out
+   SCHEDULED: <2011-04-23 Sat .+1d>
+   :PROPERTIES:
+   :STYLE:    habit
+   :END:
+
+** TODO Significant exercise
+   SCHEDULED: <2011-04-23 Sat .+2d/5d>
+   :PROPERTIES:
+   :STYLE:    habit
+   :END:
+
+** TODO Stay within calorie goal max (1600 cal)
+   SCHEDULED: <2011-04-23 Sat .+1d>
+   :PROPERTIES:
+   :STYLE:    habit
+   :END:
+
+** TODO Stay within calorie goal min (1300 cal)
+   SCHEDULED: <2011-04-21 Thu .+1d/4d>
+   :PROPERTIES:
+   :STYLE:    habit
+   :END:
+
+* Statistics
+
+** Graphs
+*** All time graph
+#+srcname: org-diet-graph
+#+begin_src gnuplot :var data=org-diet-info :var enddate=org-diet-today-date :file ~/org/snippets/weight.png
+  reset
+  set xdata time
+  set ylabel "weight (in pounds)"
+  set timefmt "%Y-%m-%d"
+  set xrange [:enddate]
+  set term pngcairo font "Sans,6" dashed
+  plot data using 1:2 with lines lt 3 title "weight",\
+       data using 1:3 with lines lw 3 lt 1 title "average weight"
+#+end_src
+
+#+results: org-diet-graph
+[[file:./weight.png]]
+
+*** Last month's graph
+
+#+source: org-diet-graph-month(data=org-diet-info, startdate=org-diet-month-start-date, enddate=org-diet-today-date)
+#+begin_src gnuplot :file ~/org/snippets/weight_month.png
+  reset
+  set xdata time
+  set ylabel "weight (in pounds)"
+  set timefmt "%Y-%m-%d"
+  set xrange [startdate:enddate]
+  set term pngcairo font "Sans,10" dashed
+  plot data using 1:2 with lines lt 3 title "weight",\
+       data using 1:3 with lines lw 3 lt 1 title "average weight"
+#+end_src
+
+#+results: org-diet-graph-month
+[[file:./weight_month.png]]
+
+** Numbers, numbers, numbers!
+*** Calories to burn per day
+
+Erk, I used this block to calculate the number of calories I'd have to
+lose per day to meet my goal, but obviously you'll need to adjust the
+date.  We should make this more generic, probably :)
+
+#+BEGIN_SRC emacs-lisp
+  (let* ((var-curweight (nth 1 (car (reverse (org-diet-weight-summary)))))
+         (var-calstolose
+          (calc-eval
+           "(evalv(curweight) - 200) * 3500"))
+         (var-daysleft
+          (calc-eval
+           "floor((<Thu Jun 30, 2011> - now()))")))
+    (calc-eval "evalv(calstolose / daysleft)"))
+#+END_SRC
+
+*** BMI
+
+#+srcname: org-diet-bmi
+#+BEGIN_SRC calc :var curweight=org-diet-current-weight :var height=73
+curweight 703 / height^2
+#+END_SRC
+
+| BMI       | Classification    |
+|-----------+-------------------|
+| < 18.5    | underweight       |
+| 18.5–24.9 | normal weight     |
+| 25.0–29.9 | overweight        |
+| 30.0–34.9 | class I obesity   |
+| 35.0–39.9 | class II obesity  |
+| ≥ 40.0    | class III obesity |
+
+** Support funcs
+
+#+srcname: org-diet-info
+#+begin_src emacs-lisp
+  (org-diet-weight-summary)
+#+end_src
+
+#+srcname: org-diet-month-start-date
+#+begin_src emacs-lisp
+  (format-time-string
+   "%Y-%m-%d"
+   (org-time-from-absolute
+    (- (time-to-days (current-time))  30)))
+#+end_src
+
+#+srcname: org-diet-today-date
+#+begin_src emacs-lisp
+  (format-time-string "%Y-%m-%d" (current-time))
+#+end_src
+
+#+srcname: org-diet-current-weight
+#+BEGIN_SRC emacs-lisp
+(save-excursion
+  (beginning-of-buffer)
+  (search-forward-regexp "^\\* Daily Logs[ \t]*$")
+  (outline-next-heading)
+  (org-entry-get (point) "Weight"))
+#+END_SRC
+
