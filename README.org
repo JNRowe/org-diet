@@ -1,0 +1,125 @@
+Org-diet
+
+* About
+
+** About org-diet specifically
+
+org-diet is a methedology and collection of tools for using orgmode
+for dieting purposes.  It works, and I know it works, because at the
+time of writing I've lost approximately 65 pounds by it, and am still
+losing weight.
+
+At the base level, there's almost nothing at all to org-diet.  It's
+just calorie tracking.  That's it.  Just calorie and day to day weight
+tracking.  Everything on top of it is just a bunch of nice tools to
+make sure you can meet your goals from there.
+
+Like org-mode, org-diet does a great job of scaling both up and down.
+At the most minimal level, you can simply weigh in every day and graph
+that and just enter your calorie information every day in tables.
+Eventually if you want to add graphing, you can use the graphing
+tools.  Eventually if you want to calculate your BMI, you can do that.
+Want to add habits?  Add habits.  Whatever.  But you could keep it
+really simple, and for a long time daily weigh-ins and calorie
+tracking was all I had (I hadn't written the other tools yet), and it
+worked good enough for me, good enough to lose the first 35 pounds of
+my journey in 5 months before our wedding.
+
+At the time of writing I still have a bit to go, but I've lost enough
+weight to go from a BMI that said I was slightly above "morbid
+obseisty" (what a scary phrase) past "obesity" down to simply
+"overweight".  By my calculations, in a few months I'll finally hit
+"normal weight".  If I could do it, you can do it.  I promise.  (Well,
+I promise socially.  No warranty of course. :])  Everything past this
+point is just careful planning.
+
+** Theory
+
+To be fair, much of the approach and reasoning I've taken for org-diet
+is based off of reading [[gnus:nnml:Inbox#946365649.1303490903816.JavaMail.notify@globalnotifications.com][The Hacker's Diet]], which is a wonderful book
+for approaching dieting by taking an engineering approach to it.  If
+you are having problems with your weight, I recommend reading this
+book; I think it does a great job of taking the whole problem of
+dieting and making it make sense.
+
+The main thing you need to know about dieting via calorie counting is
+this: the amount of weight you gain / lose over a period of time is
+pretty simple math.  Here's how it works.
+
+ - There's 3500 calories in a pound.
+ - Your metabolism is the amount of calories you burn every day not
+   including exercise calories.  Just the calories of you living.
+ - Exercise will burn a certain amount of calories also.
+ - Every day, you eat.  The amount of calories you eat add up.
+ - Yes, your metabolism is probably affected by the quality of food
+   you're eating and your regular activity level, but it isn't
+   affected by that much.
+
+So every day you have calories in (what you eat) and calories out
+(what you burn through metabolism and exercise).  Figuring out the
+"difference" can tell you whether you'll lose or gain weight.  The
+equation is pretty simple:
+
+: calorie_diff = cals_eaten - daily_metabolism - exercise
+
+You can calculate your metabolism either by taking a best guess; there
+are a lot of "metabolism calculators" on the web which might figure
+out your daily calorie burn... it's probably sufficient to run a
+number of these and average them and you'll probably get a pretty
+decent guess of what your metabolism is (presuming you don't have some
+sort of serious genetic offsets).  Or you can reverse engineer it by
+keeping track of your diet for a while, seeing how much you lose /
+gain relative to the calories you take in for a while and then you'll
+know.  I did this once, it turned out to be pretty close to what the
+metabolism calculators online give.  Might as well just start with
+those and adjust later, I guess.
+
+So presumably, if you want to burn a pound a week, the math is pretty
+simple: 3500 calories in a pound, 3500 / 7 is 500, you need to consume
+500 calories less a day than you take in.  (Conversely, if you took in
+500 more than you burn per day, you'll gain a pound per day.)  It's
+that simple.  So if your metabolism is roughly 2100 calories per day,
+you just need to keep yourself at or below 1600 calories per day and
+you'll meet your goal if you stick with it.
+
+I used to shoot for 1200 calories a day (but generally hit more like
+1400 per day) when I started my diet, and I lost a lot of weight
+really fast.  I'm now shooting for about 1300-1600 calories per day
+(more on that in the [[* Habits][Habits]] section) and I'm losing weight a little
+bit slower (5-7 pounds per month instead of about 9) but it's still
+going rather well.  You can figure out what works for you.  You can
+even just set a goal and see how fast you lose weight, and if it's not
+fast enough, you can adjust later.
+
+So one major difference from the way /The Hacker's Diet/ does things.
+John Walker, the author of that book, recommends that you don't bother
+to track your calories every day and he shows some good techniques
+to do things without a detailed tracking like this.  If that works for
+you, great; you could even adjust org-diet to take a path closer to
+his, but personally I find that if I don't track every calorie
+obsessively, I completly blow away my diet.  YMMV.  I suggest you try
+my way of doing things... if you're reading this, you're already an
+orgmode user, which means you're used to obsessive tracking anyway.
+How much harder could it be to add calorie tracking to all the other
+crazy things you do in org-mode? ;)
+
+Nonetheless, I seriously, seriously recommend reading
+/The Hacker's Diet/ if you or someone you know has a problem with
+your/their weight.
+
+You don't need to buy into expensive or fads pushed by the diet
+industry.  Screw that.  Calorie tracking is basic math, and it works.
+
+PS: don't take the progress of your first 3 weeks as indication of
+anything.  You might not see much progress, or more likely, you'll see
+a *TON* of progress that won't keep up.
+
+Enough ranting!  Let's get started.
+
+* Using
+
+** Simple weigh-in and calorie counting
+** Graphing
+** Calorie clock-out
+** Habits
+** BMI & other tools
