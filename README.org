@@ -121,5 +121,12 @@ Enough ranting!  Let's get started.
 ** Simple weigh-in and calorie counting
 ** Graphing
 ** Calorie clock-out
+
+#+BEGIN_SRC emacs-lisp
+; Or add to list, whatever
+(setq org-todo-keyword-faces
+      '(("CAL-CANCEL" . (:foreground "orange" :weight bold))))
+#+END_SRC
+
 ** Habits
 ** BMI & other tools
