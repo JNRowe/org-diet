@@ -119,6 +119,27 @@ Enough ranting!  Let's get started.
 * Using
 
 ** Simple weigh-in and calorie counting
+
+Here's what to use for capturing (you can remove CAL-IN if you don't
+want to do calorie clocking):
+
+#+BEGIN_SRC emacs-lisp
+(setq org-remember-templates
+        '(("Weigh-in" ?w "* CAL-IN Diet for day %t
+%^{Weight}p
+| Food / Exercise | Calories | Quantity | Total |
+|-----------------+----------+----------+-------|
+| %?%&                |          |          |       |
+|-----------------+----------+----------+-------|
+| Total           |          |          |       |
+#+TBLFM: $4=$2*$3::$LR4=vsum(@2$4..@-I$4)
+
+" "~/org/diet.org" "Daily Logs")))
+
+; Optional, bind org-captue to "C-c o r"... or whatever.
+(define-key global-map "\C-cor" 'org-capture)
+#+END_SRC
+
 ** Graphing
 ** Calorie clock-out
 
