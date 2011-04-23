@@ -11947,53 +11947,6 @@ From http://www.khiewchanta.com/archives/soups/cinnamon-soup-with-egg-pa-lo-k.ht
 | Total               |          |        2 |   408 |
 #+TBLFM: $4=$2*$3;%.0f::$LR4=vsum(@2$4..@-I$4)/$LR3;%.0f
 
-Cinnamon Soup with Egg ( Pa Lo Khai )
-
-A very unusual soup, slightly spicy with the taste of cinnamon. The
-eggs make it a very filling meal rather than a soup, often served with
-rice to pad it into a full meal. This is something of an aquired
-taste, if cinnamon flavored boiled eggs are not for you, you may
-prefer to try one of the more common Thai dishes first and work up to
-this.
-
-Ingredients for 2 people
-1 Tablespoon of Cinnamon
-4 Boiled Eggs
-4 Piece of Brown Dry Tofu
-2 Cloves Garlic
-1 Pepper Corn
-1 Tablespoon Chopped Coriander Leaf
-1 Teaspoon Dark Soya Sauce
-1 Tablespoon Light Soya Sauce
-1 Level Teaspoon Salt
-2 Level Tablespoon Sugar
-1 Chicken Stock Cube (Or Vegetable Stock for Vegetarian)
-200 ml. Water
-1 Teaspoon Oil
-
-Preparation
-1. Pound the garlic, pepper corns, and coriander together in a pestle.
-2. Remove the shell of the boiled eggs.
-2. Put the water to boil and add the stock cube in a boiling pan.
-3. Heat a frying pan, add the oil and the pounded garlic, pepper,
-   cinnamon and coriander mix and fry.
-4. Fry lightly until the garlic is softened.
-5. Add the dark Soya sauce, light Soya sauce, salt, and sugar and stir
-   it to mix it.
-6. Add the whole boiled egg in fry them for a second to take on some
-   of the flavours.
-7. Put the fried ingredients into the boiling pan containing the
-   chicken stock & water.
-8. Cut the tofu into bite sized pieces and add to the boiling pan.
-9. Boil for 10 minutes and turn heat on low for a gentle simmer for a
-   further 30 minutes.
-10. Leave it for cool then serve warm.
-
-Suggestions
-
-It is better to leave this to rest overnight for the cinnamon
-fragrance to infuse throughout the eggs.
-
 ** Minimalist olive taco
 
 | Ingredients     | Calories | Quantity | Total |
@@ -12084,22 +12037,6 @@ Could we get an amount of this?
 |--------------------+----------+----------+-------|
 | Total              |          |        6 |   186 |
 #+TBLFM: $4=$2*$3;%.0f::$LR4=vsum(@2$4..@-I$4)/$LR3;%.0f
-
-From http://www.theppk.com/2010/12/olive-lentil-burgers/
-
-Olive oil (from 1 teaspoon to 2 tablespoons, your choice)
-1 small yellow onion, diced medium
-1/2 pound cremini mushrooms, thinly sliced
-3 cloves garlic, minced
-Fresh black pepper
-1/2 teaspoon dried thyme
-1/4 teaspoon dried tarragon
-1/2 cup pitted kalamata olives (really, use any pitted olive you like)
-1 15 oz can cooked lentils, rinsed and drained (1 1/4 cups)
-1 cup breadcrumbs, divided
-2 tablespoons soy sauce
-2 teaspoons fresh lemon juice
-1/4 teaspoon liquid smoke (optional)
 
 ** Matrioshka Eggnog
 
@@ -13722,34 +13659,6 @@ http://vegworcester.com/2010/02/05/best-vegan-mac-and-cheese-recipe/
 
 ** TODO Soul Veg mac & cheese
 
-Soul Veg cookbook is the best. My adaptation of their mac & cheese:
-
-    * 1 box macaroni
-    * 2 cartons silken tofu
-    * 2 cups oil
-    * 8 tablespoons nutritional yeast
-    * salt & garlic powder to taste, paprika for color.
-    * Optional spiced (garlic powder, sage, thyme, etc.) breadcrumbs and soy butter
-
-Cook macaroni. Put the obvious things in a food processor. Blend for a
-while after it looks smooth - if you don't blend enough it will
-separate when cooked. If it's well blended it will stay creamy not
-greasy. Put the macaroni and sauce into a pan and mix, the macaroni
-should be swimming. Optionally coat with breadcrumbs and dollops of
-butter and then bake at 350 until it's firm. This is the best mac &
-cheese from scratch recipe you'll find.
-
-You can also make a kick-ass nutritional yeast gravy for those
-potatoes. Saute a lot of onions, mushrooms, peppers or whatever
-veggies you'd like. In another pan have 2 parts nutritional yeast to 1
-part flour. Toast the flour without blowing up your home, then combine
-with water or broth and cook until it begins to thicken. I don't
-remember the proportions there so you are going to have to google
-"nutritional yeast gravy". Use more nutritional yeast than most
-recipes call for.
-
-http://www.reddit.com/r/vegan/comments/b90v8/vegan_soulfood/c0lkf36
-
 ** DONE Vegan meatloaf
    CLOSED: [2011-01-01 Sat 11:04]
 http://28cooks.blogspot.com/2010/08/just-because-its-vegan-delicious-vegan.html
@@ -15322,24 +15231,3 @@ This is outdated... we should use the new functions
 | [[*2009-01-02 Fri]] |  264.8 |     265.40 |      20% |
 | [[*2009-01-01 Thu]] |  266.0 |     266.00 |      10% |
 
-* Current projections
-
-How many calories we need to lose per day:
-
-#+BEGIN_SRC emacs-lisp
-  (let* ((current-weight 237)
-         (goal-weight 200)
-         (weight-to-lose (- current-weight goal-weight))
-         (cals-to-lose (* weight-to-lose 3500))
-         (days-of-losing (* 6 30)))
-    (/ cals-to-lose days-of-losing))
-#+END_SRC
-
-#+results:
-: 719
-
-Presumably we burn 2500 / day so
-
-(- 2500 719) 1781
-
-Given we'll have fail days we'll want to shoot for 1400, 1600 at the worst!
