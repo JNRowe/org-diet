@@ -2,6 +2,17 @@ Org-diet
 
 * About
 
+** A disclaimer
+
+I'm not a health professional and this isn't medical advice.  Talk to
+your doctor.  Seriously, from a medical standpoint especially, I want
+to introduce a non-warranty here.  Talk to your doctor.  Furthermore,
+dietary methods are highly, highly disputed in the medical world, and
+I'm not from the medical world.
+
+That said this worked for me, and I think probably will work for you.
+It isn't based on anything too drastic, just calorie tracking.
+
 ** About org-diet specifically
 
 org-diet is a methedology and collection of tools for using orgmode
