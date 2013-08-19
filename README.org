@@ -88,7 +88,7 @@ those and adjust later, I guess.
 So presumably, if you want to burn a pound a week, the math is pretty
 simple: 3500 calories in a pound, 3500 / 7 is 500, you need to consume
 500 calories less a day than you take in.  (Conversely, if you took in
-500 more than you burn per day, you'll gain a pound per day.)  It's
+500 more than you burn per day, you'll gain a pound per week.)  It's
 that simple.  So if your metabolism is roughly 2100 calories per day,
 you just need to keep yourself at or below 1600 calories per day and
 you'll meet your goal if you stick with it.
