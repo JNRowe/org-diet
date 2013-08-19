@@ -15,7 +15,7 @@ It isn't based on anything too drastic, just calorie tracking.
 
 ** About org-diet specifically
 
-org-diet is a methedology and collection of tools for using orgmode
+org-diet is a methodology and collection of tools for using orgmode
 for dieting purposes.  It works, and I know it works, because at the
 time of writing I've lost approximately 65 pounds by it, and am still
 losing weight.
@@ -38,7 +38,7 @@ my journey in 5 months before our wedding.
 
 At the time of writing I still have a bit to go, but I've lost enough
 weight to go from a BMI that said I was slightly above "morbid
-obseisty" (what a scary phrase) past "obesity" down to simply
+obesity" (what a scary phrase) past "obesity" down to simply
 "overweight".  By my calculations, in a few months I'll finally hit
 "normal weight".  If I could do it, you can do it.  I promise.  (Well,
 I promise socially.  No warranty of course. :])  Everything past this
@@ -108,7 +108,7 @@ to track your calories every day and he shows some good techniques
 to do things without a detailed tracking like this.  If that works for
 you, great; you could even adjust org-diet to take a path closer to
 his, but personally I find that if I don't track every calorie
-obsessively, I completly blow away my diet.  YMMV.  I suggest you try
+obsessively, I completely blow away my diet.  YMMV.  I suggest you try
 my way of doing things... if you're reading this, you're already an
 orgmode user, which means you're used to obsessive tracking anyway.
 How much harder could it be to add calorie tracking to all the other
@@ -147,7 +147,7 @@ want to do calorie clocking):
 
 " "~/org/diet.org" "Daily Logs")))
 
-; Optional, bind org-captue to "C-c o r"... or whatever.
+; Optional, bind org-capture to "C-c o r"... or whatever.
 (define-key global-map "\C-cor" 'org-capture)
 #+END_SRC
 
